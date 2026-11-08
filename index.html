@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DayBreak: Run Till Sunrise</title>
+    <meta name="description" content="Jay put on a Halloween mask a day early. Now it won't come off, and the LeDuck family is out with nets, stakes and a shotgun. Outrun them till sunrise. Coming to iPhone and Android." />
+    <meta name="theme-color" content="#140f2e" />
+    <meta property="og:title" content="DayBreak: Run Till Sunrise" />
+    <meta property="og:description" content="A hand-painted runner. Outrun the LeDuck family till sunrise." />
+    <meta property="og:image" content="./art/title_bg.webp" />
+    <link rel="icon" href="./favicon.svg" />
+    <script type="module" crossorigin src="./assets/index-B6JK2FRM.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/site-X7lSCtMf.css">
+  </head>
+  <body>
+    <a class="skip" href="#story">Skip to the story</a>
+
+    <header class="nav" id="nav">
+      <a class="nav-logo" href="#top" aria-label="DayBreak, back to the top"><span class="art" data-art="ui_logo"></span></a>
+      <nav aria-label="Sections">
+        <a href="#story">The story</a>
+        <a href="#ducktown">Ducktown</a>
+        <a href="#traps">Traps</a>
+        <a href="#wardrobe">Wardrobe</a>
+        <a href="#styles">Art</a>
+        <a href="#chronicle">Lore</a>
+      </nav>
+      <button class="snaps" id="snaps" type="button" aria-label="Cryptids snapped">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h3l2-2.5h6L17 7h3a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1Zm8 10a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" /></svg>
+        <span id="snap-count">0/4</span>
+      </button>
+      <div class="night-meter" aria-hidden="true"><div class="night-fill" id="night-fill"></div></div>
+    </header>
+
+    <main>
+      <!-- the advert -->
+      <section class="hero" id="top">
+        <div class="hero-bg art" data-art="title_bg" data-cover></div>
+        <div class="hero-copy">
+          <h1 class="hero-logo"><span class="art" data-art="ui_logo"></span><span class="sr">DayBreak</span></h1>
+          <p class="tagline">Run till sunrise.</p>
+          <p class="pitch">Jay put on a Halloween mask a day early. Now it won’t come off, and the LeDuck family is out with nets, stakes and a shotgun. Outrun them through the farm, the marsh and the forest until the sun comes up.</p>
+          <div class="ctas">
+            <span class="cta cta-soon">Coming soon to iPhone and Android</span>
+            <a class="cta cta-ghost" href="#story">Start the story ↓</a>
+          </div>
+        </div>
+        <div class="chase" aria-hidden="true">
+          <div class="chase-ground art" data-art="ground_farm" data-tile></div>
+          <div class="chase-truck"><span class="art" data-art="veh_pickup"></span></div>
+          <div class="chase-jay"><span class="art" data-art="jay_run" data-sheet></span></div>
+        </div>
+      </section>
+
+      <!-- the opening comic -->
+      <section class="section" id="story">
+        <header class="section-head">
+          <p class="kicker">Chapter one</p>
+          <h2>One day early</h2>
+          <p class="lede">How a sophomore ended up running for his life on Halloween Eve. Tap a panel to see it big.</p>
+        </header>
+        <ol class="comic" id="comic"></ol>
+      </section>
+
+      <!-- the interactive lore: Ducktown after dark -->
+      <section class="section section-wide" id="ducktown">
+        <header class="section-head">
+          <p class="kicker">Chapter two</p>
+          <h2>Ducktown after dark</h2>
+          <p class="lede">Follow the trail from the LeDucks’ porch to the forest. Tap anyone you find to hear their story, and keep your eyes open: <strong>four cryptids</strong> are hiding along the way. Snap them all.</p>
+        </header>
+        <div class="trail" id="trail"></div>
+      </section>
+
+      <!-- trap school -->
+      <section class="section" id="traps">
+        <header class="section-head">
+          <p class="kicker">Chapter three</p>
+          <h2>Trap school</h2>
+          <p class="lede">Every trap on the trail has exactly one right move. Pick it fast to build your streak, just like a real run. Arrow keys work too.</p>
+        </header>
+        <div class="quiz" id="quiz">
+          <div class="quiz-stage">
+            <div class="quiz-hud">
+              <span class="quiz-candy"><span class="art" data-art="candy"></span><b id="quiz-candy">0</b></span>
+              <span class="quiz-mult" id="quiz-mult">x1</span>
+            </div>
+            <div class="quiz-trap"><span class="art" id="quiz-art"></span></div>
+            <p class="quiz-name" id="quiz-name"></p>
+            <p class="quiz-by" id="quiz-by"></p>
+            <p class="quiz-result" id="quiz-result" aria-live="polite"></p>
+          </div>
+          <div class="quiz-moves" id="quiz-moves"></div>
+        </div>
+      </section>
+
+      <!-- the wardrobe -->
+      <section class="section" id="wardrobe">
+        <header class="section-head">
+          <p class="kicker">Chapter four</p>
+          <h2>The costume shop was sold out</h2>
+          <p class="lede">Seven outfits, and Jay is painted whole in every one of them, for every move. Try them on.</p>
+        </header>
+        <div class="wardrobe">
+          <div class="runway">
+            <div class="runway-ground art" data-art="ground_farm" data-tile></div>
+            <div class="runway-jay"><span class="art" id="runway-art" data-sheet></span></div>
+          </div>
+          <div class="outfit-info">
+            <p class="rarity" id="outfit-rarity"></p>
+            <h3 id="outfit-name"></h3>
+            <p id="outfit-blurb"></p>
+            <div class="outfits" id="outfits" role="radiogroup" aria-label="Outfits"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- the art styles -->
+      <section class="section" id="styles">
+        <header class="section-head">
+          <p class="kicker">Chapter five</p>
+          <h2>Five ways to paint a night</h2>
+          <p class="lede">Every frame in DayBreak is painted by hand: no puppets, no rigs, the whole figure in every pose. Then it’s all painted again, four more times. Pick a style and this whole page repaints.</p>
+        </header>
+        <div class="style-picker" id="style-picker" role="radiogroup" aria-label="Art style"></div>
+        <p class="style-blurb" id="style-blurb"></p>
+        <div class="style-show">
+          <figure><span class="art" data-art="lm_house"></span><figcaption>The LeDuck place</figcaption></figure>
+          <figure><span class="art" data-art="fletch_scoop" data-sheet></span><figcaption>Fletch, mid-scoop</figcaption></figure>
+          <figure><span class="art" data-art="intro_zombie"></span><figcaption>ZOMBIE!!!</figcaption></figure>
+        </div>
+      </section>
+
+      <!-- the lore -->
+      <section class="section" id="chronicle">
+        <header class="section-head">
+          <p class="kicker">From the archives</p>
+          <h2>The Ducktown Chronicle</h2>
+          <p class="lede">Two hundred years of monster hunting, and how it all came down on one sophomore.</p>
+        </header>
+        <ol class="chronicle" id="chronicle-list"></ol>
+      </section>
+    </main>
+
+    <footer class="daybreak" id="daybreak">
+      <div class="daybreak-sky art" data-art="sky_dawn" data-cover></div>
+      <div class="daybreak-ground art" data-art="ground_farm" data-tile></div>
+      <div class="daybreak-jay" aria-hidden="true"><span class="art" data-art="human_cheer" data-sheet></span></div>
+      <div class="daybreak-copy">
+        <div class="daybreak-sun"><span class="art" data-art="sun_wink"></span></div>
+        <h2>You made it to daybreak.</h2>
+        <p>The mask cracks off with the first light. The LeDucks will be back tomorrow night.</p>
+        <span class="cta cta-soon">Coming soon to iPhone and Android</span>
+        <p class="fine">
+          <a href="./privacy.html">Privacy policy</a>
+          <span aria-hidden="true">·</span>
+          <a href="./support.html">Support</a>
+          <span aria-hidden="true">·</span>
+          <span>© 2026 DayBreak</span>
+        </p>
+      </div>
+    </footer>
+
+    <dialog class="card" id="card" aria-labelledby="card-name">
+      <button class="card-close" type="button" id="card-close" aria-label="Close">×</button>
+      <div class="card-art"><span class="art" id="card-art"></span></div>
+      <div class="card-text">
+        <p class="card-role" id="card-role"></p>
+        <h3 id="card-name"></h3>
+        <p id="card-body"></p>
+        <div class="card-traps" id="card-traps"></div>
+      </div>
+    </dialog>
+
+    <dialog class="lightbox" id="lightbox" aria-label="Comic panel">
+      <button class="card-close" type="button" id="lightbox-close" aria-label="Close">×</button>
+      <span class="art" id="lightbox-art"></span>
+      <p id="lightbox-cap"></p>
+    </dialog>
+
+    <div class="flash" id="flash" aria-hidden="true"></div>
+    <div class="toasts" id="toasts" role="status" aria-live="polite"></div>
+
+  </body>
+</html>
